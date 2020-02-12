@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<card_templates>
+  <card_template id="1" type="WHILE" title="Kozákkucsma" />
+  <card_template id="2" type="BLACK" title="Milyen szuperképességem van?" />
+  <card_template id="3" type="BLACK" title="Igen, megöltem _________. Hogyan? _________." card_count="2" />
+</card_templates>
