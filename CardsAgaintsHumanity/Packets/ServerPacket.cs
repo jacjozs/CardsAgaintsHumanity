@@ -23,6 +23,11 @@ namespace CAHLib.Packets
             WriteBytes(BitConverter.GetBytes(value));
         }
 
+        public void WriteShort(int value)
+        {
+            WriteBytes(BitConverter.GetBytes((short)value));
+        }
+
         public void WriteUnsignedShort(ushort value)
         {
             WriteBytes(BitConverter.GetBytes(value));
@@ -38,6 +43,11 @@ namespace CAHLib.Packets
             WriteBytes(BitConverter.GetBytes(value));
         }
 
+        public void WriteBool(bool value)
+        {
+            WriteByte((byte)(value ? 1 : 0));
+        }
+
         public void WriteString(string str)
         {
             foreach (char c in str)
@@ -45,13 +55,6 @@ namespace CAHLib.Packets
                 byte[] tmp = BitConverter.GetBytes(c);
                 WriteBytes(tmp);
             }
-            WriteShort(0);
-        }
-
-        public void WriteAionDescription(int message)
-        {
-            WriteShort(0x24);
-            WriteInt(message);
             WriteShort(0);
         }
     }

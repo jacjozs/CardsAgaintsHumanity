@@ -10,7 +10,12 @@ namespace CAHServer.Services
         public static void OnPlayer(ref GameConnection connection, string nickname)
         {
             connection.Player = new Player(connection, nickname);
-            GameService.Instance.Players.Add(nickname, connection.Player);
+            GameService.Instance.OnPlayer(connection.Player);
+        }
+
+        public static void OffPlayer(Player player)
+        {
+            GameService.Instance.OffPlayer(player);
         }
     }
 }

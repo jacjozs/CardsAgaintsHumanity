@@ -23,6 +23,12 @@ namespace CAHServer.Services
             Log.Debug("New connection from " + GetRemoteIP());
             BeginWrite(new SM_PONG());
         }
+
+        public override void OnDisconnect()
+        {
+            base.OnDisconnect();
+            PlayerService.OffPlayer(Player);
+        }
     }
 
     public class GameClientListener : TcpListener

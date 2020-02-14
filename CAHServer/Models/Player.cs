@@ -7,13 +7,17 @@ namespace CAHServer.Models
     public class Player
     {
         /// <summary>
-        /// Fehér kártyák
+        /// Fehér kártyák id-e
         /// </summary>
         private List<int> whileCards;
         /// <summary>
         /// Cár e a játékos
         /// </summary>
         private bool isCzar;
+        /// <summary>
+        /// Kiválasztott fehér kártyák id-e
+        /// </summary>
+        private List<int> selectCards;
         /// <summary>
         /// Becenév
         /// </summary>
@@ -24,6 +28,7 @@ namespace CAHServer.Models
         private GameConnection connection;
 
         public List<int> WhileCards { get => whileCards; set => whileCards = value; }
+        public List<int> SelectCards { get => selectCards; set => selectCards = value; }
         public bool IsCzar { get => isCzar; set => isCzar = value; }
         public string Nickname => nickname;
         public GameConnection Connection { get => connection; set => connection = value; }

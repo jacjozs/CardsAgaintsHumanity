@@ -47,12 +47,9 @@ namespace CAHFrame.Packets
             }
             WriteShort(0);
         }
-
-        public void WriteAionDescription(int message)
+        public void WriteBool(bool value)
         {
-            WriteShort(0x24);
-            WriteInt(message);
-            WriteShort(0);
+            WriteByte((byte)(value ? 1 : 0));
         }
     }
 }
